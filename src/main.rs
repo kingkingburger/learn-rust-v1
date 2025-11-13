@@ -41,4 +41,9 @@ fn main() {
     println!("The value of x is: {x}");
     x = 6;
     println!("The value of x is: {x}");
+
+    let a: [i32; 5] = [1, 2, 3, 4, 5];
+    for num in a {
+        println!("This is array {num}");
+    }
 }
