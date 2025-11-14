@@ -35,6 +35,9 @@
 //         }
 //     }
 // }
+mod while_test;
+
+use while_test::while_test;
 
 fn main() {
     let mut x = 5;
@@ -50,24 +53,6 @@ fn main() {
     // another_function();
     // print_labeled_measurement(5, 'h');
     // express();
-}
-
-fn while_test() {
-    let a = [10,20,30,40,50];
-    let mut index = 0;
-
-    while (index < 5){
-        println!("the value is: {}", a[index]);
-        index += 1; 
-    }
-
-    for element in a {
-        println!("the value is: {element}");
-    }
-
-    for number in (1..4).rev() {
-        println!("{number}!");
-    }
 }
 
 fn another_function() {
