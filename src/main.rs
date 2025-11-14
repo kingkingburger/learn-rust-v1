@@ -46,4 +46,14 @@ fn main() {
     for num in a {
         println!("This is array {num}");
     }
+    another_function();
+    print_labeled_measurement(5, 'h');
+}
+
+fn another_function() {
+    println!("another function");
+}
+
+fn print_labeled_measurement(value: i32, unit_label: char) {
+    println!("The measurement is: {value}{unit_label}");
 }
