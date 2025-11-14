@@ -46,9 +46,28 @@ fn main() {
     for num in a {
         println!("This is array {num}");
     }
-    another_function();
-    print_labeled_measurement(5, 'h');
-    express();
+    while_test();
+    // another_function();
+    // print_labeled_measurement(5, 'h');
+    // express();
+}
+
+fn while_test() {
+    let a = [10,20,30,40,50];
+    let mut index = 0;
+
+    while (index < 5){
+        println!("the value is: {}", a[index]);
+        index += 1; 
+    }
+
+    for element in a {
+        println!("the value is: {element}");
+    }
+
+    for number in (1..4).rev() {
+        println!("{number}!");
+    }
 }
 
 fn another_function() {
@@ -64,5 +83,4 @@ fn express() -> i32 {
         let x = 3;
         return x + 1;
     };
-
 }
