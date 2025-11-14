@@ -59,10 +59,10 @@ fn print_labeled_measurement(value: i32, unit_label: char) {
     println!("The measurement is: {value}{unit_label}");
 }
 
-fn express() {
+fn express() -> i32 {
     let y = {
         let x = 3;
-        x + 1
+        return x + 1;
     };
-    println!("The value of y is: {y}");
+
 }
