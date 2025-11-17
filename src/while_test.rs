@@ -15,3 +15,4 @@ pub fn while_test() {
         println!("{number}!");
     }
 }
+

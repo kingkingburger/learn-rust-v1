@@ -49,10 +49,35 @@ fn main() {
     for num in a {
         println!("This is array {num}");
     }
-    while_test();
+    // while_test();
     // another_function();
     // print_labeled_measurement(5, 'h');
     // express();
+
+    let s1 = String::from("hello");
+
+    // takes_ownership(s);
+    let (s2, len) = calculate_length(s1); // 함수에 튜블 형태로 소유권 다시 넘겨주기
+    println!("{} {}", s2, len);
+    // println!(s); s의 메모리는 takes_ownership에서 해제됨
+
+    let x = 5;
+
+    makes_copy(x);
+}
+
+fn calculate_length(s: String) -> (String, usize){
+    let length = s.len();
+
+    (s, length)
+}
+
+fn takes_ownership(some_string: String){
+    println!("{}", some_string);
+}
+
+fn makes_copy(some_integer: i32){
+    println!("{}", some_integer);
 }
 
 fn another_function() {
