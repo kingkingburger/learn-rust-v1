@@ -57,8 +57,8 @@ fn main() {
     let s1 = String::from("hello");
 
     // takes_ownership(s);
-    let (s2, len) = calculate_length(s1); // 함수에 튜블 형태로 소유권 다시 넘겨주기
-    println!("{} {}", s2, len);
+    let len = calculate_length(&s1); // 함수에 튜블 형태로 소유권 다시 넘겨주기
+    println!("{}", len);
     // println!(s); s의 메모리는 takes_ownership에서 해제됨
 
     let x = 5;
@@ -66,10 +66,8 @@ fn main() {
     makes_copy(x);
 }
 
-fn calculate_length(s: String) -> (String, usize){
-    let length = s.len();
-
-    (s, length)
+fn calculate_length(s: &String) -> usize{
+    s.len()
 }
 
 fn takes_ownership(some_string: String){
