@@ -64,7 +64,15 @@ fn main() {
     let x = 5;
 
     makes_copy(x);
+
+    let mut tt = String::from("hello");
+    change(&mut tt);
 }
+
+fn change(some_string: &mut String) {
+    some_string.push_str(", world");
+}
+
 
 fn calculate_length(s: &String) -> usize{
     s.len()
