@@ -67,11 +67,30 @@ fn main() {
 
     let mut tt = String::from("hello");
     change(&mut tt);
+
+    let mut s = String::from("hello world");
+
+    let word = first_word(&s);
+
+    s.clear();
+
+    let hello = &s[0..5];
+    let world = &s[6..11];
+}
+
+fn first_word(s: &String) -> &str {
+    let bytes = s.as_bytes();
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[0..i];
+        }
+    }
+    &s[..]
 }
 
 fn change(some_string: &mut String) {
     some_string.push_str(", world");
-    
+
     let mut s = String::from("hello");
 
     let r1 = &s; // 문제없음
@@ -83,16 +102,15 @@ fn change(some_string: &mut String) {
     println!("{}", r3);
 }
 
-
-fn calculate_length(s: &String) -> usize{
+fn calculate_length(s: &String) -> usize {
     s.len()
 }
 
-fn takes_ownership(some_string: String){
+fn takes_ownership(some_string: String) {
     println!("{}", some_string);
 }
 
-fn makes_copy(some_integer: i32){
+fn makes_copy(some_integer: i32) {
     println!("{}", some_integer);
 }
 
