@@ -1,45 +1,38 @@
-// use std::{cmp::Ordering, io};
-
-// use rand::Rng;
-
-// fn main() {
-//     println!("Guess the number!");
-
-//     let secret_number = rand::thread_rng().gen_range(1..=100);
-
-//     // println!("The secret number is {secret_number}");
-
-//     loop {
-//         println!("Please input your guess.");
-
-//         let mut guess = String::new();
-
-//         io::stdin()
-//             .read_line(&mut guess)
-//             .expect("Failed to read line");
-
-//         let guess: u32 = match guess.trim().parse() {
-//             Ok(num) => num,
-//             Err(_) => continue,
-//         };
-
-//         println!("You guessed: {guess}");
-
-//         match guess.cmp(&secret_number) {
-//             Ordering::Less => println!("Too small"),
-//             Ordering::Greater => println!("Too big!"),
-//             Ordering::Equal => {
-//                 println!("You win1");
-//                 break;
-//             }
-//         }
-//     }
-// }
 mod while_test;
 
 use while_test::while_test;
 
+struct User {
+    active: bool,
+    username: String,
+    email: String,
+    sign_in_count: u64,
+}
+
+fn build_user(email: String, username: String) -> User {
+    User {
+        active: true,
+        username,
+        email,
+        sign_in_count: 1,
+    }
+}
+
 fn main() {
+    let user1 = User {
+        active: true,
+        username: String::from("sdfasdf"),
+        email: String::from("asdf@gmail.com"),
+        sign_in_count: 1,
+    };
+
+    // build_user(email, username);
+
+    let user2 = User {
+        email: String::from("anthor"),
+        ..user1
+    };
+
     let mut x = 5;
     println!("The value of x is: {x}");
     x = 6;
