@@ -9,6 +9,7 @@ fn main() {
     };
 
     println!("rect is {:?}", rect1);
+    println!("rect is {:#?}", rect1);
 }
 
 struct User {
