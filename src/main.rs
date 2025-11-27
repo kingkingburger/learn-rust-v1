@@ -18,6 +18,23 @@ fn build_user(email: String, username: String) -> User {
     }
 }
 
+fn area(width: u32, height: u32) -> u32 {
+    width * height
+}
+
+fn area2(dimensions: (u32, u32)) -> u32 {
+    dimensions.0 * dimensions.1
+}
+
+struct Rectangl {
+    width: u32,
+    height: u32,
+}
+
+fn area3(rectangl: &Rectangl) -> u32 {
+    rectangl.width * rectangl.height
+}
+
 fn main() {
     let user1 = User {
         active: true,
