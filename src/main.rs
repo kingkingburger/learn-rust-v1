@@ -8,7 +8,7 @@ fn main() {
         height: 50,
     };
 
-    println!("rect is {}", rect1);
+    println!("rect is {:?}", rect1);
 }
 
 struct User {
@@ -35,6 +35,7 @@ fn area2(dimensions: (u32, u32)) -> u32 {
     dimensions.0 * dimensions.1
 }
 
+#[derive(Debug)]
 struct Rectangl {
     width: u32,
     height: u32,
