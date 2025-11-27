@@ -10,6 +10,14 @@ fn main() {
 
     println!("rect is {:?}", rect1);
     println!("rect is {:#?}", rect1);
+
+    let scale = 2;
+    let rect2 = Rectangl {
+        width: dbg!(30 * scale),
+        height: 50,
+    };
+
+    dbg!(&rect2);
 }
 
 struct User {
