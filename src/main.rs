@@ -2,6 +2,15 @@ mod while_test;
 
 use while_test::while_test;
 
+fn main() {
+    let rect1 = Rectangl {
+        width: 30,
+        height: 50,
+    };
+
+    println!("rect is {}", rect1);
+}
+
 struct User {
     active: bool,
     username: String,
@@ -33,59 +42,6 @@ struct Rectangl {
 
 fn area3(rectangl: &Rectangl) -> u32 {
     rectangl.width * rectangl.height
-}
-
-fn main() {
-    let user1 = User {
-        active: true,
-        username: String::from("sdfasdf"),
-        email: String::from("asdf@gmail.com"),
-        sign_in_count: 1,
-    };
-
-    // build_user(email, username);
-
-    let user2 = User {
-        email: String::from("anthor"),
-        ..user1
-    };
-
-    let mut x = 5;
-    println!("The value of x is: {x}");
-    x = 6;
-    println!("The value of x is: {x}");
-
-    let a: [i32; 5] = [1, 2, 3, 4, 5];
-    for num in a {
-        println!("This is array {num}");
-    }
-    // while_test();
-    // another_function();
-    // print_labeled_measurement(5, 'h');
-    // express();
-
-    let s1 = String::from("hello");
-
-    // takes_ownership(s);
-    let len = calculate_length(&s1); // 함수에 튜블 형태로 소유권 다시 넘겨주기
-    println!("{}", len);
-    // println!(s); s의 메모리는 takes_ownership에서 해제됨
-
-    let x = 5;
-
-    makes_copy(x);
-
-    let mut tt = String::from("hello");
-    change(&mut tt);
-
-    let mut s = String::from("hello world");
-
-    let word = first_word(&s);
-
-    s.clear();
-
-    let hello = &s[0..5];
-    let world = &s[6..11];
 }
 
 fn first_word(s: &String) -> &str {
