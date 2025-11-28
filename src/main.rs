@@ -8,16 +8,8 @@ fn main() {
         height: 50,
     };
 
-    println!("rect is {:?}", rect1);
+    println!("rect is {:?}", rect1.area());
     println!("rect is {:#?}", rect1);
-
-    let scale = 2;
-    let rect2 = Rectangl {
-        width: dbg!(30 * scale),
-        height: 50,
-    };
-
-    dbg!(&rect2);
 }
 
 struct User {
@@ -48,6 +40,12 @@ fn area2(dimensions: (u32, u32)) -> u32 {
 struct Rectangl {
     width: u32,
     height: u32,
+}
+
+impl Rectangl {
+    fn area(&self) -> u32 {
+        self.width * self.height
+    }
 }
 
 fn area3(rectangl: &Rectangl) -> u32 {
