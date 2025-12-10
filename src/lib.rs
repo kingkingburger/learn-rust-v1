@@ -14,6 +14,8 @@ mod front_of_house {
     }
 }
 
+use crate::front_of_house::hosting;
+
 mod back_of_house {
     pub struct Breakfast {
         pub toast: String,
@@ -31,6 +33,8 @@ mod back_of_house {
 }
 
 pub fn eat_at_restaurant() {
+    hosting::add_to_waitlist();
+
     // 호밀(Rye) 토스트를 곁들인 여름철 조식 주문
     let mut meal = back_of_house::Breakfast::summer("Rye");
     // 먹고 싶은 빵 바꾸기
