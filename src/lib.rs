@@ -45,3 +45,10 @@ pub fn eat_at_restaurant() {
     // 계절 과인은 조회나 수정이 허용되지 않습니다.
     // meal.seasonal_fruit = String::from("blueberries");
 }
+
+// not working, customer 스코프에서만 사용할 수 있음 eat_at_restaurant 까지 못감.
+mod customer {
+    // pub fn eat_at_restaurant() {
+    //     hosting::add_to_waitlist();
+    // }
+}
