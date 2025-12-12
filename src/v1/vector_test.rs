@@ -14,4 +14,16 @@ pub fn vector_test() {
         Some(third) => println!("The third element is {third}"),
         None => println!("There is no element"),
     }
+
+    enum SpreadsheetCel {
+        Int(i32),
+        Float(f64),
+        Text(String),
+    }
+
+    let row = vec![
+        SpreadsheetCel::Int(3),
+        SpreadsheetCel::Text(String::from("blue")),
+        SpreadsheetCel::Float(10, 12),
+    ];
 }
