@@ -1,8 +1,8 @@
-use crate::garden::vegetables::Asparagus;
+use crate::v1::learn_hash::learn_hash;
 
-pub mod garden;
+mod v1;
+
 
 fn main() {
-    let plant = Asparagus {};
-    println!("I'm growing {:?}!", plant);
+    learn_hash();
 }
