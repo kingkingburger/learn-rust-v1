@@ -1,9 +1,9 @@
+use std::fs::File;
+
 use crate::v1::learn_hash::learn_hash;
 
 mod v1;
 
 fn main() {
-    let v = vec![1, 2, 3];
-
-    v[99];
+    let greeting_file_result = File::open("hello.txt");
 }
