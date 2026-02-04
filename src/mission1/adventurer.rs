@@ -1,7 +1,7 @@
 pub struct Adventurer {
-    pub name: String,
-    pub life: i32,
-    pub gold: i32,
+    name: String,
+    life: i32,
+    gold: i32,
 }
 
 impl Adventurer {
