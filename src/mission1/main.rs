@@ -1,6 +1,7 @@
 mod adventurer;
 mod item;
 mod quest;
+mod guild;
 
 fn main() {
     let player1 = adventurer::Adventurer::new(String::from("minho"), 100, 50);
@@ -16,4 +17,8 @@ fn main() {
         level: 0,
         reward: reward_item,
     };
+
+    let _example_guild = guild::Guild::new(String::from("Knights of Rust"), 100);
+    _example_guild.guild_info();
+
 }
