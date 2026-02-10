@@ -1,3 +1,5 @@
+use crate::{component_storage::{Name, Position}, entity::{self, Entity}};
+
 struct World {
     entities: Vec<Entity>,
     next_id: u32,
@@ -9,6 +11,8 @@ impl World {
     fn new() -> Self {
         World {
             entities: Vec::new(),
+            position: Vec::new(),
+            names: Vec::new(),
             next_id: 0,
         }
     }
@@ -18,7 +22,8 @@ impl World {
         let new_entity = Entity(id);
         
         self.entities.push(new_entity);
-
+        self.position.push(None);
+        self.names.push(None);
         self.next_id = id + 1;
 
         new_entity

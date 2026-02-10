@@ -1,6 +1,6 @@
-struct Position {
+pub struct Position {
     x: f32,
     y: f32,
 }
 
-struct Name(String);
+pub struct Name(String);
