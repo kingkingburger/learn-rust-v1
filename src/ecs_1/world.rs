@@ -1,6 +1,8 @@
 struct World {
     entities: Vec<Entity>,
-    next_id: u32
+    next_id: u32,
+    position: Vec<Option<Position>>,
+    names: Vec<Option<Name>>,
 }
 
 impl World {

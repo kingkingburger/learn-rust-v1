@@ -9,3 +9,7 @@ rand="0.8.5"
 [[bin]]
 name = "mission1"
 path = "src/mission1/main.rs"
+
+[[bin]]
+name="ecs"
+path="src/ecs_1/main.rs"
