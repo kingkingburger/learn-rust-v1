@@ -3,7 +3,7 @@ use crate::{component_storage::{Name, Position}, entity::{self, Entity}};
 pub struct World {
     entities: Vec<Entity>,
     next_id: u32,
-    position: Vec<Option<Position>>,
+    pub position: Vec<Option<Position>>,
     names: Vec<Option<Name>>,
 }
 
@@ -27,5 +27,11 @@ impl World {
         self.next_id = id + 1;
 
         new_entity
+    }
+
+    pub fn add_position(&mut self, entity: Entity, pos: Position) {
+        let id = entity.0 as usize;
+
+        self.position[id] = Some(pos);
     }
 }
