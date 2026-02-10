@@ -1,6 +1,6 @@
 use crate::{component_storage::{Name, Position}, entity::{self, Entity}};
 
-struct World {
+pub struct World {
     entities: Vec<Entity>,
     next_id: u32,
     position: Vec<Option<Position>>,
@@ -8,7 +8,7 @@ struct World {
 }
 
 impl World {
-    fn new() -> Self {
+    pub fn new() -> Self {
         World {
             entities: Vec::new(),
             position: Vec::new(),
@@ -17,7 +17,7 @@ impl World {
         }
     }
 
-    fn spawn(&mut self) -> Entity {
+    pub fn spawn(&mut self) -> Entity {
         let id = self.next_id;
         let new_entity = Entity(id);
         
