@@ -8,7 +8,16 @@ mod component_storage;
 
 fn main() {
     let mut main_world = world::World::new();
-    main_world.spawn();
+    
+    let entity = main_world.spawn();
+
+    let initial_pos = component_storage::Position {x: 0.0, y: 0.0};
+    main_world.add_position(entity, initial_pos);
+
+    println!("시스템 실행 전");
+    movement_system(&mut main_world);
+
+    movement_system(&mut main_world);
 }
 
 
