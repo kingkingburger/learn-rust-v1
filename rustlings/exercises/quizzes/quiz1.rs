@@ -16,6 +16,13 @@ fn main() {
     // You can optionally experiment here.
 }
 
+fn calculate_price_of_apples(number: u32) -> u32 {
+    match number {
+        0..40 => number * 2,
+        _ => number
+    }
+}
+
 // Don't change the tests!
 #[cfg(test)]
 mod tests {
