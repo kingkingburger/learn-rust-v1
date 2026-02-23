@@ -18,7 +18,7 @@ fn main() {
 
 fn calculate_price_of_apples(number: u32) -> u32 {
     match number {
-        0..40 => number * 2,
+        0..41 => number * 2,
         _ => number
     }
 }
