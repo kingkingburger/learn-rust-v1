@@ -47,23 +47,44 @@ impl State {
         // TODO: Create a match expression to process the different message
         // variants using the methods defined above.
 
-        match message {
-            Message::Resize { width, height }=> {
-                self.resize(width, height);
-            }
-            Message::ChangeColor(red, green, blue) => {
-                self.change_color(red, green, blue);
-            }
-            Message::Echo(str) => {
-                self.echo(str);
-            }
-            Message::Move(point) => {
-                self.move_position(point);
-            }
-            Message::Quit => {
-                self.quit()
-            }
+        // match message {
+        //     Message::Resize { width, height }=> {
+        //         self.resize(width, height);
+        //     }
+        //     Message::ChangeColor(red, green, blue) => {
+        //         self.change_color(red, green, blue);
+        //     }
+        //     Message::Echo(str) => {
+        //         self.echo(str);
+        //     }
+        //     Message::Move(point) => {
+        //         self.move_position(point);
+        //     }
+        //     Message::Quit => {
+        //         self.quit()
+        //     }
+        // }
+
+        if let Message::Quit = message {
+            self.quit();
         }
+
+        else if let Message::Move(point) = message {
+            self.move_position(point);
+        }
+
+        else if let Message::ChangeColor(red, green, blue) = message {
+            self.change_color(red, green, blue);
+        }
+
+        else if let Message::Resize { width, height } = message {
+            self.resize(width, height);
+        }
+
+        else if let Message::Echo(str) = message {
+            self.echo(str);
+        }
+
     }
 }
 
