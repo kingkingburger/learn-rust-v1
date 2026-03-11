@@ -19,11 +19,11 @@ fn main() {
 
     string(String::from("hi"));
 
-    string_slice("rust is fun!".to_owned());
+    string("rust is fun!".to_owned());
 
     string_slice("nice weather".into());
 
-    string_slice(format!("Interpolation {}", "Station"));
+    string(format!("Interpolation {}", "Station"));
 
     // WARNING: This is byte indexing, not character indexing.
     // Character indexing can be done using `s.chars().nth(INDEX)`.
@@ -33,5 +33,5 @@ fn main() {
 
     string("Happy Monday!".replace("Mon", "Tues"));
 
-    string_slice("mY sHiFt KeY iS sTiCkY".to_lowercase());
+    string("mY sHiFt KeY iS sTiCkY".to_lowercase());
 }
