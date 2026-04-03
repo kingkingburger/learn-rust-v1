@@ -35,21 +35,23 @@ mod my_module {
 
         for line in input {
             match line.1 {
-                Command::Uppercase { } => {
-                    result.push(line.0);
+                Command::Uppercase => {
+                    result.push(line.0.to_uppercase());
                 }
-                Command::Trim { } => {
-                    result.push(line.0.trim());
+                Command::Trim => {
+                    result.push(line.0.trim().to_string());
                 }
-                Command::Append { count } => {
-                    for i in count {
-                        result.push(line.0 + "bar");
+                Command::Append (count) => {
+                    let mut previous_line = line.0;
+                    for _ in 0..count {
+                        previous_line += "bar";
                     }
+                    result.push(previous_line.clone());
                 }
             }
         }
 
-        vec![]
+        result
     }
 
 }
