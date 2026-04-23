@@ -4,11 +4,13 @@
 // `hour_of_day` is higher than 23.
 fn maybe_ice_cream(hour_of_day: u16) -> Option<u16> {
     // TODO: Complete the function body.
-    if hour_of_day > 23 {
+    if (22..24).contains(&hour_of_day) {
+        return Some(0);
+    } else if hour_of_day >= 24 {
         return None;
     }
 
-    return Some(5);
+    Some(5)
 }
 
 fn main() {
